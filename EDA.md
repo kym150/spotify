@@ -61,6 +61,21 @@ To explore the data, we initially looked at the first 1,000 playlists. We pulled
 The key insight from this bar plot is that there are massive numbers of playlists that have the same title. From this data, there appear to be distinct clusters of types of playlists (“workout”, “rap”, etc.). Since there are apparently niche types of playlists, this supports our hypothesis that playlist information could be valuable for suggesting playlists.
 
 
+## Literature Review
+
+The literature points to five key challenges facing those creating automatic playlist generators. These include:
+* Sequential consumption - listeners listen to playlists in a specified order and may have preferences related to that order. For example, listeners may not want to listen to the same artist two songs in a row.
+* Preference for repeat recommendations - listeners may want to hear the same song twice as long as there is a sufficient gap.
+* Background listening - people often listen to music passively so might not skip a song if they don't like it, making skipping an inaccurate signal.
+* Context - what a person wants to listen to is emotion, location, time, weather and event-dependent, and music generators must find ways to update according to these contextual factors.
+* A lack of contextual information (in the cold start problem).
+
+**Sources**
+
+“Spotify - Statistics & Facts | Statista.” Accessed December 11, 2018. https://www.statista.com/topics/2075/spotify/.
+
+Shedl, M., Peter Knees, and Fabien Gouyon, New Paths in Music Recommender Systems, RecSys'17
+tutorial, http://www.cp.jku.at/tutorials/mrs_recsys_2017/slides.pdf; Logan, B., A Content-Based Music Similarity Function, (Report CRL2001/02) Compaq Computer Corporation Cambridge Research Laboratory, Technical Report Series (Jun. 2001).
 
 ```python
 
