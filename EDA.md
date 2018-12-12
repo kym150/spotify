@@ -72,7 +72,7 @@ The literature points to five key challenges facing those creating automatic pla
 
 **Sources**
 
-“Spotify - Statistics & Facts | Statista.” Accessed December 11, 2018. https://www.statista.com/topics/2075/spotify/.
+“Spotify - Statistics & Facts - Statista.” Accessed December 11, 2018. https://www.statista.com/topics/2075/spotify/.
 
 Shedl, M., Peter Knees, and Fabien Gouyon, New Paths in Music Recommender Systems, RecSys'17
 tutorial, http://www.cp.jku.at/tutorials/mrs_recsys_2017/slides.pdf; Logan, B., A Content-Based Music Similarity Function, (Report CRL2001/02) Compaq Computer Corporation Cambridge Research Laboratory, Technical Report Series (Jun. 2001).

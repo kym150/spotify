@@ -25,9 +25,11 @@
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
         <a href="./index.html" class="btn">Overview</a>
         <a href="./EDA.html" class="btn">EDA</a>
+        <a href="./model.html" class="btn">Modeling Approach</a>
+        <a href="./results.html" class="btn">Results</a>
         <a href="./future.html" class="btn">Conclusion</a>
         {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+        <a href="{{ site.github.repository_url }}" class="btn">GitHub</a>
       {% endif %}
       {% if site.show_downloads %}
         <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
