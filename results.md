@@ -4,47 +4,35 @@ title: Results
 
 ## Results
 
-Our result: a recommender system that can take a song as an input and produce a list of desired length. For example, after inputting 'HUMBLE' by Kendrick Lamar, we are given the following playlist.
+Our result: a recommender system that can take a song as an input and produce a list of desired length. For example, after inputting the song title 'Rain is a Good Thing' by Luke Bryan, we are given the following playlist.
 
 ```python
-#if there are multiple artists
-SR.recommend_me_some_songs(database, unique_tracks,'HUMBLE.')
+playlist_country = SR.recommend_me_some_songs(database, unique_tracks, 'Rain Is a Good Thing', 'Luke Bryan')
 ```
 
 
-    /Users/yang_helen/Documents/GitHub/spotify/song_recommender.py:48: UserWarning: More than one artist with the song name. Please specify the artist name. Your options are: ['Kendrick Lamar' 'Our Last Night']
-      warnings.warn(f"More than one artist with the song name. Please specify the artist name. Your options are: {unique_tracks[unique_tracks.track_name == song_name].artist_name.unique()}")
-
-
-
-
-```python
-playlist_HUMBLE = SR.recommend_me_some_songs(database, unique_tracks,'HUMBLE.', 'Kendrick Lamar')
-```
-
-
-    HUMBLE. - Kendrick Lamar
-    DNA. - Kendrick Lamar
-    Congratulations - Post Malone
-    Mask Off - Future
-    XO TOUR Llif3 - Lil Uzi Vert
-    Bounce Back - Big Sean
-    iSpy (feat. Lil Yachty) - KYLE
-    Tunnel Vision - Kodak Black
-    goosebumps - Travis Scott
-    Bad and Boujee (feat. Lil Uzi Vert) - Migos
-    Slippery (feat. Gucci Mane) - Migos
-    T-Shirt - Migos
-    I'm the One - DJ Khaled
-    Caroline - Aminé
-    Drowning (feat. Kodak Black) - A Boogie Wit da Hoodie
-    rockstar - Post Malone
-    Unforgettable - French Montana
-    Broccoli (feat. Lil Yachty) - DRAM
-    Fake Love - Drake
-    Bank Account - 21 Savage
-    Portland - Drake
-    No Problem (feat. Lil Wayne & 2 Chainz) - Chance The Rapper
-    Swang - Rae Sremmurd
-    Passionfruit - Drake
-    Magnolia - Playboi Carti
+    Rain Is a Good Thing - Luke Bryan
+    Country Girl (Shake It For Me) - Luke Bryan
+    Play It Again - Luke Bryan
+    Chicken Fried - Zac Brown Band
+    That's My Kind Of Night - Luke Bryan
+    Drunk On You - Luke Bryan
+    Knee Deep (feat. Jimmy Buffett) - Zac Brown Band
+    Cruise - Florida Georgia Line
+    I Don't Want This Night to End - Luke Bryan
+    House Party - Sam Hunt
+    Barefoot Blue Jean Night - Jake Owen
+    Wagon Wheel - Darius Rucker
+    Springsteen - Eric Church
+    Toes - Zac Brown Band
+    Crash My Party - Luke Bryan
+    Boys 'Round Here (feat. Pistol Annies & Friends) - Blake Shelton
+    Drunk On A Plane - Dierks Bentley
+    This Is How We Roll - Florida Georgia Line
+    Round Here - Florida Georgia Line
+    Leave The Night On - Sam Hunt
+    Honey Bee - Blake Shelton
+    Get Your Shine On - Florida Georgia Line
+    Drink In My Hand - Eric Church
+    Dirt Road Anthem - Jason Aldean
+    Die A Happy Man - Thomas Rhett

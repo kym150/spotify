@@ -23,4 +23,49 @@ Our final model is rooted in the idea that the purpose of playlists is to bring 
 
 Our song recommender first asks users to input the name of a song they like and specify the length (in songs) of playlist they want returned. The recommender then checks to make sure that the song appears in at least one playlist and that the song is uniquely identified with a single artist. If the song title is not unique to a single artist, the user will also be prompted to input the name of the artist associated with the inputted song.
 
+For example, when we try to input the song "Humble" by Kendrick Lamar, we first receive a warning that there are multiple artists with that song title. We are prompted to specify the unique artist name. 
+
+```python
+#if there are multiple artists
+SR.recommend_me_some_songs(database, unique_tracks,'HUMBLE.')
+```
+
+
+    /Users/yang_helen/Documents/GitHub/spotify/song_recommender.py:48: UserWarning: More than one artist with the song name. Please specify the artist name. Your options are: ['Kendrick Lamar' 'Our Last Night']
+      warnings.warn(f"More than one artist with the song name. Please specify the artist name. Your options are: {unique_tracks[unique_tracks.track_name == song_name].artist_name.unique()}")
+
+
 Next, the recommender counts the number of times that other songs "co-appear" in the same playlist as the inputted song. It then constructs a playlist of songs that "co-appear" with the inputted song in the most playlists, in descending order with the most co-appearing song as the first song in the generated playlist.
+
+In the same example, we input the song title, "Humble", and the artist, Kendrick Lamar. The algorithm uses this inputted song to generate the following playlist of length 25.
+
+```python
+playlist_HUMBLE = SR.recommend_me_some_songs(database, unique_tracks,'HUMBLE.', 'Kendrick Lamar')
+```
+
+
+    HUMBLE. - Kendrick Lamar
+    DNA. - Kendrick Lamar
+    Congratulations - Post Malone
+    Mask Off - Future
+    XO TOUR Llif3 - Lil Uzi Vert
+    Bounce Back - Big Sean
+    iSpy (feat. Lil Yachty) - KYLE
+    Tunnel Vision - Kodak Black
+    goosebumps - Travis Scott
+    Bad and Boujee (feat. Lil Uzi Vert) - Migos
+    Slippery (feat. Gucci Mane) - Migos
+    T-Shirt - Migos
+    I'm the One - DJ Khaled
+    Caroline - Aminé
+    Drowning (feat. Kodak Black) - A Boogie Wit da Hoodie
+    rockstar - Post Malone
+    Unforgettable - French Montana
+    Broccoli (feat. Lil Yachty) - DRAM
+    Fake Love - Drake
+    Bank Account - 21 Savage
+    Portland - Drake
+    No Problem (feat. Lil Wayne & 2 Chainz) - Chance The Rapper
+    Swang - Rae Sremmurd
+    Passionfruit - Drake
+    Magnolia - Playboi Carti
