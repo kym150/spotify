@@ -23,6 +23,11 @@ To explore the data, we initially looked at the first 500 unique tracks. For eac
 
 We next performed some additional exploratory analysis to look at the average number of tags per song, the number of songs tagged with each genre, and the proportion of songs.
 
+Figure 1: Histogram of Number of Songs (Y) and Number of Tags (X) from the Million Songs Dataset
+
+![figure 1](https://github.com/kym150/spotify/tree/master/notebooks/fig1.png)
+
+An important insight from the initial data exploration of the first 500 unique songs in the Million Songs Dataset is that 80% have very few tags (between 0 and 10). This could be the case that only a few tags are actually valuable. As a group, we will therefore have to make decisions about how to deal with songs that have very few or no tags. For example, we can generate our own tags or simply eliminate these songs from consideration. 
 
 **Million Playlist Dataset**
 
