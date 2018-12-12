@@ -70,9 +70,17 @@ The literature points to five key challenges facing those creating automatic pla
 * Context - what a person wants to listen to is emotion, location, time, weather and event-dependent, and music generators must find ways to update according to these contextual factors.
 * A lack of contextual information (in the cold start problem).
 
+The literature also covers a number of ways to determine song 'similarity', for example by looking at musical tempo, instrumental, or timbre similarity. However, we felt that this methods don't account for the importance of recognition, or in other words the enjoyment people get from listening to songs they have already heard.
+
 **Sources**
+
+Berenzweig, Adam, Beth Logan, Daniel P.W. Ellis and Brian Whitman. A Large-Scale Evaluation of Acoustic and Subjective Music Similarity Measures. Proceedings of the ISMIR International Conference on Music Information Retrieval (Baltimore, MD), 2003, pp. 99?105.
+
+
+Logan, B., A Content-Based Music Similarity Function, (Report CRL 2001/02) Compaq Computer Corporation Cambridge Research Laboratory, Technical Report Series (Jun. 2001). 
 
 “Spotify - Statistics & Facts - Statista.” Accessed December 11, 2018. https://www.statista.com/topics/2075/spotify/.
 
 Shedl, M., Peter Knees, and Fabien Gouyon, New Paths in Music Recommender Systems, RecSys'17
 tutorial, http://www.cp.jku.at/tutorials/mrs_recsys_2017/slides.pdf; Logan, B., A Content-Based Music Similarity Function, (Report CRL2001/02) Compaq Computer Corporation Cambridge Research Laboratory, Technical Report Series (Jun. 2001).
+
