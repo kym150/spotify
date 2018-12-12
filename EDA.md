@@ -54,6 +54,11 @@ To explore the data, we initially looked at the first 1,000 playlists. We pulled
 * Number of followers in each playlist
 * Number of tracks in each playlist
 
+**Figure 3: Top 15 Most Popular Playlist Names from Million Playlist Dataset**
+
+![figure 3](./notebooks/fig3.png)
+
+The key insight from this bar plot is that there are massive numbers of playlists that have the same title. From this data, there appear to be distinct clusters of types of playlists (“workout”, “rap”, etc.). Since there are apparently niche types of playlists, this supports our hypothesis that playlist information could be valuable for suggesting playlists.
 
 
 
