@@ -3,7 +3,7 @@ title: Conclusion
 ---
 
 ## Conclusions
-
+In conclusion, we were able to successfully create a playlist generator that met our requirements. We've learnt that there is a huge amount of data about individual tracks, and collections of playlists out there for us to use, and we've been able to work with some extremely large datasets.
 
 ## Future Work
 
