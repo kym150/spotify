@@ -1,5 +1,5 @@
 ---
-title: Spotify Project
+title: Spotify Project By Kysie Miao, Helen Yang, and Catherine Marks
 ---
 
 ## Project Overview
