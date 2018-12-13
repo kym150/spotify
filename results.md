@@ -81,7 +81,7 @@ playlist_bad_romance = SR.recommend_me_some_songs(database, unique_tracks, 'Bad 
     Disturbia - Rihanna
     Fergalicious - Fergie
     
- When we use our tag function, it provides us with a list of songs that are tagged with a preferred item. An interesting case is the Christmas playlist, where all songs that were generated were Christmas songs, but not all were tagged 'Christmas'. This demonstrates that while the tags in the last.fm dataset are accurate, they are not wholistic and not all songs have all the tags they should have. 
+ When we use our tag function, it provides us with a list of songs that are tagged with a preferred item. An interesting case is the Christmas playlist, where all songs that were generated were Christmas songs, but not all were tagged 'Christmas'. This demonstrates that while the tags in the last.fm dataset are accurate, they are not wholistic and not all songs have all the tags they should have. However, the remaining playlist is still one we are very happy with. 
     
     Silent Night - Pentatonix
     Hark! The Herald Angels Sing - Pentatonix
