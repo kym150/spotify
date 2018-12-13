@@ -37,5 +37,46 @@ playlist_country = SR.recommend_me_some_songs(database, unique_tracks, 'Rain Is 
     Dirt Road Anthem - Jason Aldean
     Die A Happy Man - Thomas Rhett
    
-   '''
-We were able to test our model on a range of inputs and genres (for example, christmas songs and pop songs) and it made great playlists that we would enjoy listening to. 
+  
+We were able to test our model on a range of inputs and genres (for example, christmas songs and pop songs) and it made great playlists that we would enjoy listening to. The playlist generator also allows you to input just a song name, and if there are multiple songs with that name, lists the artists who have songs with that track name. 
+
+```python
+playlist_bad_romance = SR.recommend_me_some_songs(database, unique_tracks,'Bad Romance')
+```
+
+    /Users/yang_helen/Documents/GitHub/spotify/song_recommender.py:48: UserWarning: More than one artist with the song name. Please specify the artist name. Your options are: ['Lady Gaga' 'Artist Vs Poet' 'Lissie' 'Halestorm'
+     'Vitamin String Quartet' "Scott Bradlee's Postmodern Jukebox"
+     'On The Rocks' 'The Chipmunks & The Chipettes'
+     'University of Rochester YellowJackets' 'Simply Three' 'Alex Goot'
+     'Outline In Color' 'Berk']
+      warnings.warn(f"More than one artist with the song name. Please specify the artist name. Your options are: {unique_tracks[unique_tracks.track_name == song_name].artist_name.unique()}")
+
+```python
+playlist_bad_romance = SR.recommend_me_some_songs(database, unique_tracks, 'Bad Romance', 'Lady Gaga')
+```
+
+    Bad Romance - Lady Gaga
+    Poker Face - Lady Gaga
+    Just Dance - Lady Gaga
+    TiK ToK - Kesha
+    Party In The U.S.A. - Miley Cyrus
+    Telephone - Lady Gaga
+    Umbrella - Rihanna
+    Hollaback Girl - Gwen Stefani
+    SexyBack - Justin Timberlake
+    Paparazzi - Lady Gaga
+    I Gotta Feeling - The Black Eyed Peas
+    California Gurls - feat. Snoop Dogg - Katy Perry
+    Yeah! - Usher
+    Hot N Cold - Katy Perry
+    Toxic - Britney Spears
+    Dynamite - Taio Cruz
+    I Kissed a Girl - Katy Perry
+    Super Bass - Nicki Minaj
+    Don't Stop The Music - Rihanna
+    Hips Don't Lie - Shakira
+    Crazy In Love - Beyoncé
+    Whatcha Say - Jason Derulo
+    Last Friday Night (T.G.I.F.) - Katy Perry
+    Disturbia - Rihanna
+    Fergalicious - Fergie
