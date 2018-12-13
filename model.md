@@ -10,7 +10,7 @@ One approach we considered was scraping the lyrics wiki database to find songs t
 
 We also considered splitting each playlist and then using machine learning methods to train selections of songs and using how well the list of songs reflected the list of songs in other playlists. However, we didn’t feel like this was necessarily an adequate measure of ‘success’. 
 
-Lastly, we considered identifying songs that are in many of the same playlists together, ranked by frequency. We ultimately decided this was the best approach given the thematic power of playlists. 
+Lastly, we considered identifying songs that are in many of the same playlists together, ranked by frequency. We ultimately decided this was the best approach given the thematic power of playlists. We then used the last.FM API, which allows you to add tags to individual songs, to classify songs into genres (some having multiple genres), so that listeners could specify their preferred gnre. 
 
 
 ## Modeling Approach
@@ -137,3 +137,72 @@ playlist_HUMBLE = SR.recommend_me_some_songs(database, unique_tracks,'HUMBLE.', 
     Swang - Rae Sremmurd
     Passionfruit - Drake
     Magnolia - Playboi Carti
+
+
+**Using Tags to Create Genres**
+
+```python
+import pylast
+
+API_KEY = "12010046fc7e42bfc98eecbe2e6ad880"
+API_SECRET = "cd5a616a19ba38cbb1d04f1d171db7f3"
+
+username = "cathmarks"
+password_hash = pylast.md5("Horbyt-0tyhza-wutqyb")
+
+network = pylast.LastFMNetwork(api_key=API_KEY, api_secret=API_SECRET,
+                               username=username, password_hash=password_hash)
+
+def get_tags(artist,track):
+    try:   
+            track = network.get_track(artist, track)
+    except Exception:
+        return ['no tag'] 
+    try:   
+        tags = track.get_top_tags(limit=100)
+    except Exception:
+        return ['no tag'] 
+    tag = []
+    for i in range(len(tags)):
+        new_tag = str(tags[i]).split(',')[0].split('\'')[1]
+        tag.append(new_tag)
+    if tag == []:
+        return ['no tag']
+    return tag
+    
+    def add_tags(df):
+    df_ = df.copy()
+    df_['tags'] = ''
+    for n in range(0, len(df_)):
+        df_.set_value(df_.index[n], 'tags', get_tags(df_['artist_name'].iloc[n], df_['track_name'].iloc[n]))
+    return df_
+    
+    playlist_christmas_tags = add_tags(playlist_christmas)
+playlist_christmas_tags
+```
+	album_name	artist_name	duration_ms	track_name	count	tags
+4176	That's Christmas To Me (Deluxe Edition)	Pentatonix	203373	Mary, Did You Know?	271	[pop, a cappella, christian]
+4173	That's Christmas To Me (Deluxe Edition)	Pentatonix	193226	Silent Night	232	[christmas, a cappella]
+4177	That's Christmas To Me (Deluxe Edition)	Pentatonix	207853	Winter Wonderland / Don't Worry Be Happy	181	[a cappella]
+4172	That's Christmas To Me (Deluxe Edition)	Pentatonix	192573	Hark! The Herald Angels Sing	180	[christmas, a cappella]
+4171	That's Christmas To Me (Deluxe Edition)	Pentatonix	185146	It's the Most Wonderful Time of the Year	172	[a cappella, LD, light drive]
+4170	That's Christmas To Me (Deluxe Edition)	Pentatonix	182173	That's Christmas to Me	171	[christmas, a cappella, mmm sweet]
+4166	That's Christmas To Me (Deluxe Edition)	Pentatonix	136546	Sleigh Ride	165	[christmas, a cappella, Christmas Music, Talen...
+4165	That's Christmas To Me (Deluxe Edition)	Pentatonix	126893	Dance of the Sugar Plum Fairy	162	[christmas, a cappella]
+4168	That's Christmas To Me (Deluxe Edition)	Pentatonix	162186	Santa Claus is Coming to Town	162	[a cappella]
+4169	That's Christmas To Me (Deluxe Edition)	Pentatonix	167253	White Winter Hymnal	155	[a cappella]
+991	Christmas	Michael Bublé	206346	It's Beginning To Look A Lot Like Christmas	141	[christmas, michael buble, Christmas Time, jaz...
+3155	Merry Christmas	Mariah Carey	241106	All I Want for Christmas Is You	123	[christmas, pop, xmas, Mariah Carey, female vo...
+3563	PTX, Vols. 1 & 2 (Japan Edition)	Pentatonix	202666	Let It Go - Bonus Track	122	[a cappella]
+4167	That's Christmas To Me (Deluxe Edition)	Pentatonix	139880	Joy to the World	111	[no tag]
+992	Christmas	Michael Bublé	216626	White Christmas (Duet With Shania Twain)	108	[christmas, drums, female vocals, male vocals,...
+982	Christmas	Michael Bublé	119786	Holly Jolly Christmas	108	[christmas, michael buble, Canadian, xmas, Chr...
+1000	Christmas	Michael Bublé	264826	I'll Be Home For Christmas	108	[christmas, jazz, holiday, piano, Christmas So...
+4178	That's Christmas To Me (Deluxe Edition)	Pentatonix	220053	The First Noel	107	[no tag]
+995	Christmas	Michael Bublé	230306	Have Yourself A Merry Little Christmas	104	[christmas, Christmas Songs, winter, snow, Chr...
+4175	That's Christmas To Me (Deluxe Edition)	Pentatonix	202560	Have Yourself a Merry Little Christmas	102	[no tag]
+987	Christmas	Michael Bublé	171826	All I Want For Christmas Is You	100	[christmas, jazz, cover, Christmas Songs, mari...
+382	A Pentatonix Christmas	Pentatonix	268960	Hallelujah	95	[christmas, pop, cover, a cappella, Christmas ...
+986	Christmas	Michael Bublé	171093	Santa Claus Is Coming To Town	94	[christmas, xmas, Christmas Songs, Christmas T...
+984	Christmas	Michael Bublé	159973	Jingle Bells (feat. The Puppini Sisters)	93	[christmas, Christmas Time, cristmas, cocktail...
+3569	PTXmas (Deluxe Edition)	Pentatonix	193880	Carol of the Bells	92	[cover, Christmas Songs, mitch grassi]
