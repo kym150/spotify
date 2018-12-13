@@ -2,6 +2,8 @@
 title: Spotify Project By Kysie Miao, Helen Yang, and Catherine Marks
 ---
 
+## Project by Kysie Miao, Helen Yang and Catherine Marks
+
 ## Project Overview
 
 This project has two goals: firstly, to develop an automatic playlist generator for Spotify based on a base playlist and some user context information, including intent, emotion, location, and playlist "purpose". Secondly, create a model for Spotify to find songs for new playlists with relatively few prior playlist entries.
