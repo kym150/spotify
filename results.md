@@ -36,3 +36,6 @@ playlist_country = SR.recommend_me_some_songs(database, unique_tracks, 'Rain Is 
     Drink In My Hand - Eric Church
     Dirt Road Anthem - Jason Aldean
     Die A Happy Man - Thomas Rhett
+   
+   '''
+We were able to test our model on a range of inputs and genres (for example, christmas songs and pop songs) and it made great playlists that we would enjoy listening to. 
