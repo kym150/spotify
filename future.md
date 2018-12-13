@@ -3,7 +3,7 @@ title: Conclusion
 ---
 
 ## Conclusions
-In conclusion , we were able to successfully create a playlist generator that met our requirements. In conclusion, we were able to successfully create a playlist generator that met our requirements. It can work for both the 'cold start' problem and can take a range of themes as an input. 
+In conclusion , we were able to successfully create a playlist generator that met our requirements. In conclusion, we were able to successfully create a playlist generator that met our requirements. It can work for both the 'cold start' problem and can take a range of themes as an input. We faced a range of challenges along the way, and demonstrated that they can be overcome. These included: very large datasets, messy data, and a lack of a fully reliable feedback mechanism. 
 
 
 ## Future Work
